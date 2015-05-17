@@ -136,7 +136,7 @@ molokai主题
 
 
             cd ~/.vim/bundle/YouCompleteMe
-            ./install.sh --clang-completer
+            ./install.sh --clang-completer      #或者./install.sh --clang-completer --system-libclang
 
 
     有任何问题见YCM[文档](https://github.com/Valloric/YouCompleteMe)
