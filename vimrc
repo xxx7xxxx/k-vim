@@ -89,7 +89,7 @@ set cursorline          " 突出显示当前行
 
 "设置 退出vim后，内容显示在终端屏幕, 可以用于查看和复制
 "好处：误删什么的，如果以前屏幕打开，可以找回
-set t_ti= t_te=
+"set t_ti= t_te=
 
 
 "- 则点击光标不会换,用于复制
@@ -193,9 +193,9 @@ set autoindent    " 打开自动缩进
 " never add copyindent, case error   " copy the previous indentation on autoindenting
 
 " tab相关变更
-set tabstop=4     " 设置Tab键的宽度        [等同的空格个数]
-set shiftwidth=4  " 每一次缩进对应的空格数
-set softtabstop=4 " 按退格键时可以一次删掉 4 个空格
+set tabstop=8     " 设置Tab键的宽度        [等同的空格个数]
+set shiftwidth=8  " 每一次缩进对应的空格数
+set softtabstop=8 " 按退格键时可以一次删掉 8 个空格
 set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop 按退格键时可以一次删掉 4 个空格
 set expandtab     " 将Tab自动转化成空格    [需要输入真正的Tab键时，使用 Ctrl+V + Tab]
 set shiftround    " 缩进时，取整 use multiple of shiftwidth when indenting with '<' and '>'
@@ -344,7 +344,6 @@ map <C-l> <C-W>l
 noremap H ^
 noremap L $
 
-
 "Map ; to : and save a million keystrokes
 " ex mode commands made easy 用于快速进入命令行
 nnoremap ; :
@@ -464,7 +463,7 @@ nnoremap <leader>v V`}
 cmap w!! w !sudo tee >/dev/null %
 
 " kj 替换 Esc
-inoremap kj <Esc>
+"inoremap kj <Esc>
 
 " 滚动Speed up scrolling of the viewport slightly
 nnoremap <C-e> 2<C-e>
@@ -498,7 +497,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Python 文件的一般设置，比如不要 tab 等
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
-autocmd FileType ruby set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
+autocmd FileType ruby set tabstop=4 shiftwidth=4 softtabstop=4 expandtab ai
 
 " 保存python文件时删除多余空格
 fun! <SID>StripTrailingWhitespaces()
