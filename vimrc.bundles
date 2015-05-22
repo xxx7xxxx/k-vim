@@ -151,8 +151,8 @@ au FileType python let b:delimitMate_nesting_quotes = ['"']
 
 
 " 自动补全html/xml标签
-Bundle 'docunext/closetag.vim'
-let g:closetag_html_style=1
+" Bundle 'docunext/closetag.vim'
+" let g:closetag_html_style=1
 
 " ################### 快速编码 ###################
 
@@ -205,84 +205,84 @@ Bundle "kshenoy/vim-signature"
 " ################### 文本对象 ###################
 
 " 支持自定义文本对象
-Bundle 'kana/vim-textobj-user.git'
+" Bundle 'kana/vim-textobj-user.git'
 " 增加行文本对象: l   dal yal cil
-Bundle 'kana/vim-textobj-line'
+" Bundle 'kana/vim-textobj-line'
 " 增加文件文本对象: e   dae yae cie
-Bundle 'kana/vim-textobj-entire.git'
+" Bundle 'kana/vim-textobj-entire.git'
 " 增加缩进文本对象: i   dai yai cii - 相同缩进属于同一块
-Bundle 'kana/vim-textobj-indent.git'
+" Bundle 'kana/vim-textobj-indent.git'
 
 " ################### 快速选中 ###################
 " 选中区块
-Bundle 'terryma/vim-expand-region'
+" Bundle 'terryma/vim-expand-region'
 " map + <Plug>(expand_region_expand)
 " map _ <Plug>(expand_region_shrink)
-vmap v <Plug>(expand_region_expand)
-vmap V <Plug>(expand_region_shrink)
+" vmap v <Plug>(expand_region_expand)
+" vmap V <Plug>(expand_region_shrink)
 
 " 多光标选中编辑
-Bundle 'terryma/vim-multiple-cursors'
-let g:multi_cursor_use_default_mapping=0
+" Bundle 'terryma/vim-multiple-cursors'
+" let g:multi_cursor_use_default_mapping=0
 " Default mapping
-let g:multi_cursor_next_key='<C-m>'
-let g:multi_cursor_prev_key='<C-p>'
-let g:multi_cursor_skip_key='<C-x>'
-let g:multi_cursor_quit_key='<Esc>'
+" let g:multi_cursor_next_key='<C-m>'
+" let g:multi_cursor_prev_key='<C-p>'
+" let g:multi_cursor_skip_key='<C-x>'
+" let g:multi_cursor_quit_key='<Esc>'
 
 " ################### 功能相关 ###################
 
 " 文件搜索
 " change to https://github.com/ctrlpvim/ctrlp.vim
-Bundle 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_map = '<leader>p'
-let g:ctrlp_cmd = 'CtrlP'
-map <leader>f :CtrlPMRU<CR>
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
-    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
-    \ }
-let g:ctrlp_working_path_mode=0
-let g:ctrlp_match_window_bottom=1
-let g:ctrlp_max_height=15
-let g:ctrlp_match_window_reversed=0
-let g:ctrlp_mruf_max=500
-let g:ctrlp_follow_symlinks=1
+" Bundle 'ctrlpvim/ctrlp.vim'
+" let g:ctrlp_map = '<leader>p'
+" let g:ctrlp_cmd = 'CtrlP'
+" map <leader>f :CtrlPMRU<CR>
+" let g:ctrlp_custom_ignore = {
+    " \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+    " \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+    " \ }
+" let g:ctrlp_working_path_mode=0
+" let g:ctrlp_match_window_bottom=1
+" let g:ctrlp_max_height=15
+" let g:ctrlp_match_window_reversed=0
+" let g:ctrlp_mruf_max=500
+" let g:ctrlp_follow_symlinks=1
 " 如果安装了ag, 使用ag
-if executable('ag')
+" if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
+  " let g:ctrlp_use_caching = 0
+" endif
 
 
 " ctrlp插件1 - 不用ctag进行函数快速跳转
-Bundle 'tacahiroy/ctrlp-funky'
-nnoremap <Leader>fu :CtrlPFunky<Cr>
+" Bundle 'tacahiroy/ctrlp-funky'
+" nnoremap <Leader>fu :CtrlPFunky<Cr>
 " narrow the list down with a word under cursor
-nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-let g:ctrlp_funky_syntax_highlight = 1
+" nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+" let g:ctrlp_funky_syntax_highlight = 1
 
-let g:ctrlp_extensions = ['funky']
+" let g:ctrlp_extensions = ['funky']
 
 " 类似sublimetext的搜索
-Bundle "dyng/ctrlsf.vim"
+" Bundle "dyng/ctrlsf.vim"
 " In CtrlSF window:
 " 回车/o, 打开
 " t       在tab中打开(建议)
 " T - Lkie t but focus CtrlSF window instead of opened new tab.
 " q - Quit CtrlSF window.
-nmap \ <Plug>CtrlSFCwordPath<CR>
+" nmap \ <Plug>CtrlSFCwordPath<CR>
 " let g:ctrlsf_position = 'below'
 " let g:ctrlsf_winsize = '30%'
-let g:ctrlsf_auto_close = 0
+" let g:ctrlsf_auto_close = 0
 
 
 " git.  git操作还是习惯命令行,vim里面处理简单diff编辑操作
 " :Gdiff  :Gstatus :Gvsplit
-Bundle 'tpope/vim-fugitive'
-nnoremap <leader>ge :Gdiff<CR>
+" Bundle 'tpope/vim-fugitive'
+" nnoremap <leader>ge :Gdiff<CR>
 " not ready to open
 " <leader>gb maps to :Gblame<CR>
 " <leader>gs maps to :Gstatus<CR>
@@ -293,15 +293,15 @@ nnoremap <leader>ge :Gdiff<CR>
 
 " 同git diff,实时展示文件中修改的行
 " 只是不喜欢除了行号多一列, 默认关闭,gs时打开
-Bundle 'airblade/vim-gitgutter'
-let g:gitgutter_map_keys = 0
-let g:gitgutter_enabled = 0
-let g:gitgutter_highlight_lines = 1
-nnoremap <leader>gs :GitGutterToggle<CR>
+" Bundle 'airblade/vim-gitgutter'
+" let g:gitgutter_map_keys = 0
+" let g:gitgutter_enabled = 0
+" let g:gitgutter_highlight_lines = 1
+" nnoremap <leader>gs :GitGutterToggle<CR>
 
 " edit history, 可以查看回到某个历史状态
-Bundle 'sjl/gundo.vim'
-noremap <leader>h :GundoToggle<CR>
+" Bundle 'sjl/gundo.vim'
+" noremap <leader>h :GundoToggle<CR>
 
 " ################### 显示增强 ###################
 
@@ -361,12 +361,12 @@ let g:solarized_contrast="normal"
 let g:solarized_visibility="normal"
 
 " 主题 molokai
-Bundle 'tomasr/molokai'
+" Bundle 'tomasr/molokai'
 " monokai原始背景色
-let g:molokai_original = 1
+" let g:molokai_original = 1
 
 " 主题 tomorrow
-Bundle 'chriskempson/vim-tomorrow-theme'
+" Bundle 'chriskempson/vim-tomorrow-theme'
 
 
 " ################### 快速导航 ###################
@@ -394,6 +394,8 @@ let g:nerdtree_tabs_synchronize_focus=0
 " Vim Workspace Controller
 Bundle "szw/vim-ctrlspace"
 let g:airline_exclude_preview = 1
+let g:ctrlspace_set_default_mapping = 0
+let g:ctrlspace_default_mapping_key="<C-q>"
 hi CtrlSpaceSelected guifg=#586e75 guibg=#eee8d5 guisp=#839496 gui=reverse,bold ctermfg=10 ctermbg=7 cterm=reverse,bold
 hi CtrlSpaceNormal   guifg=#839496 guibg=#021B25 guisp=#839496 gui=NONE ctermfg=12 ctermbg=0 cterm=NONE
 hi CtrlSpaceSearch   guifg=#cb4b16 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
@@ -494,7 +496,7 @@ let python_highlight_all = 1
 " ###### Golang #########
 " 1.install golang and install gocode 'go get github.com/nsf/gocode'
 " 2.make sure gocode in your path: `which gocode` (add $GOPATH/bin to you $PATH)
-Bundle 'Blackrush/vim-gocode'
+" Bundle 'Blackrush/vim-gocode'
 " Bundle 'fatih/vim-go.git'
 
 " ###### Ruby #########
@@ -506,17 +508,17 @@ Bundle 'Blackrush/vim-gocode'
 
 
 " ###### Markdown #########
-Bundle 'plasticboy/vim-markdown'
-let g:vim_markdown_folding_disabled=1
+"Bundle 'plasticboy/vim-markdown'
+" let g:vim_markdown_folding_disabled=1
 
 " ###### HTML/JS/JQUERY/CSS #########
 
 " for javascript  注意: syntax这个插件要放前面
-Bundle 'jelera/vim-javascript-syntax'
-Bundle "pangloss/vim-javascript"
-let g:html_indent_inctags = "html,body,head,tbody"
-let g:html_indent_script1 = "inc"
-let g:html_indent_style1 = "inc"
+" Bundle 'jelera/vim-javascript-syntax'
+" Bundle "pangloss/vim-javascript"
+" let g:html_indent_inctags = "html,body,head,tbody"
+" let g:html_indent_script1 = "inc"
+" let g:html_indent_style1 = "inc"
 
 
 " for javascript 自动补全,配合YCM,需要安装nodejs&npm  see
@@ -524,7 +526,7 @@ let g:html_indent_style1 = "inc"
 " Bundle 'marijnh/tern_for_vim'
 
 " for jquery
-Bundle 'nono/jquery.vim'
+" Bundle 'nono/jquery.vim'
 
 " ###### emmet HTML complete #########
 " Bundle "mattn/emmet-vim"
@@ -534,7 +536,7 @@ Bundle 'nono/jquery.vim'
 " autocmd BufWritePost *.less :!lessc % > %:p:r.css
 
 " ###### Jinja2 #########
-Bundle 'Glench/Vim-Jinja2-Syntax'
+"Bundle 'Glench/Vim-Jinja2-Syntax'
 
 " for css color
 " not work in iterm2 which termianl selection is not xterm-256
@@ -544,7 +546,8 @@ Bundle 'Glench/Vim-Jinja2-Syntax'
 " Bundle 'gorodinskiy/vim-coloresque'
 
 " ###### nginx #########
-" Bundle 'evanmiller/nginx-vim-syntax'
+ Bundle 'evanmiller/nginx-vim-syntax'
+let g:ctrlspace_default_mapping_key="\<C-q>"
 
 
 "------------------------------------------- end of configs --------------------------------------------
