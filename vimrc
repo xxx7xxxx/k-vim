@@ -1,62 +1,21 @@
-"==========================================
-" Author:  wklken
-" Version: 8.1
-" Email: wklken@yeah.net
-" BlogPost: http://www.wklken.me
-" ReadMe: README.md
-" Donation: http://www.wklken.me/pages/donation.html
-" Last_modify: 2015-05-02
-" Sections:
-"       -> Initial Plugin 加载插件
-"       -> General Settings 基础设置
-"       -> Display Settings 展示/排版等界面格式设置
-"       -> FileEncode Settings 文件编码设置
-"       -> Others 其它配置
-"       -> HotKey Settings  自定义快捷键
-"       -> FileType Settings  针对文件类型的设置
-"       -> Theme Settings  主题设置
-"
-"       -> 插件配置和具体设置在vimrc.bundles中
-"==========================================
-
-"==========================================
-" Initial Plugin 加载插件
-"==========================================
-
-" 修改leader键
 let mapleader = ','
 let g:mapleader = ','
 
-" 开启语法高亮
 syntax on
-
 
 " install Vundle bundles
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
-" ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
 
-"==========================================
-" General Settings 基础设置
-"==========================================
-
-"以下配置有详细说明，一些特性不喜欢可以直接注解掉
-
-"set guifont=Monaco:h20          " 字体 && 字号
-
-" history存储容量
+" General Settings
+set guifont=inconsolata:h20          " 字体 && 字号
 set history=2000
-
-"检测文件类型
 filetype on
-"针对不同的文件类型采用不同的缩进格式
 filetype indent on
-"允许插件
 filetype plugin on
-"启动自动补全
 filetype plugin indent on
 
 set autoread          " 文件修改之后自动载入。
@@ -82,9 +41,8 @@ if has('persistent_undo')
 endif
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
-" 突出显示当前行等
 set cursorcolumn
-set cursorline          " 突出显示当前行
+set cursorline
 
 
 "设置 退出vim后，内容显示在终端屏幕, 可以用于查看和复制
@@ -121,10 +79,7 @@ set magic
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-"==========================================
 " Display Settings 展示/排版等界面格式设置
-"==========================================
-"
 "显示当前的行号列号：
 set ruler
 ""在状态栏显示正在输入的命令
@@ -134,8 +89,6 @@ set showmode
 
 " 在上下移动光标时，光标的上方或下方至少会保留显示的行数
 set scrolloff=7
-
-" set winwidth=79
 
 " 命令行（在状态行下）的高度，默认为1，这里是2
 set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
@@ -152,15 +105,10 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set matchtime=2
 
-"设置文内智能搜索提示
-" 高亮search命中的文本。
 set hlsearch
-" 打开增量搜索模式,随着键入即时搜索
 set incsearch
-" 搜索时忽略大小写
 set ignorecase
-" 有一个或以上大写字母时仍大小写敏感
-set smartcase     " ignore case if search pattern is all lowercase, case-sensitive otherwise
+set smartcase
 
 " 代码折叠
 set foldenable
@@ -186,13 +134,9 @@ fun! ToggleFold()
     endif
 endfun
 
-" 缩进配置
+set smartindent
+set autoindent
 
-set smartindent   " Smart indent
-set autoindent    " 打开自动缩进
-" never add copyindent, case error   " copy the previous indentation on autoindenting
-
-" tab相关变更
 set tabstop=8     " 设置Tab键的宽度        [等同的空格个数]
 set shiftwidth=8  " 每一次缩进对应的空格数
 set softtabstop=8 " 按退格键时可以一次删掉 8 个空格
@@ -209,7 +153,6 @@ set ttyfast
 set nrformats=
 
 
-" 相对行号      行号变成相对，可以用 nj  nk   进行跳转 5j   5k 上下跳5行
 set relativenumber number
 au FocusLost * :set norelativenumber number
 au FocusGained * :set relativenumber
@@ -226,20 +169,12 @@ endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 
 
-"==========================================
 " FileEncode Settings 文件编码,格式
-"==========================================
-" 设置新文件的编码为 UTF-8
 set encoding=utf-8
-" 自动判断编码时，依次尝试以下编码：
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set helplang=cn
-"set langmenu=zh_CN.UTF-8
-"set enc=2byte-gb18030
-" 下面这句只影响普通模式 (非图形界面) 下的 Vim。
 set termencoding=utf-8
 
-" Use Unix as the standard file type
 set ffs=unix,dos,mac
 
 " 如遇Unicode值大于255的文本，不必等到空格再折行。
@@ -248,9 +183,7 @@ set formatoptions+=m
 set formatoptions+=B
 
 
-"==========================================
 " others 其它设置
-"==========================================
 autocmd! bufwritepost _vimrc source % " vimrc文件修改之后自动加载。 windows。
 autocmd! bufwritepost .vimrc source % " vimrc文件修改之后自动加载。 linux。
 
@@ -279,11 +212,7 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-"==========================================
 " HotKey Settings  自定义快捷键设置
-"==========================================
-
-" 主要按键重定义
 
 " 关闭方向键, 强迫自己用 hjkl
 map <Left> <Nop>
@@ -298,10 +227,10 @@ nnoremap gk k
 nnoremap j gj
 nnoremap gj j
 
-" F1 - F6 设置
+" F1 - F6 设置  随时改
 " F1 废弃这个键,防止调出系统帮助
 " F2 行号开关，用于鼠标复制代码用
-" F3 显示可打印字符开关
+" F3 去掉高亮
 " F4 换行开关
 " F5 粘贴模式paste_mode开关,用于有格式的代码粘贴
 " F6 语法开关，关闭语法可以加快大文件的展示
@@ -321,7 +250,7 @@ function! HideNumber()
   set number?
 endfunc
 nnoremap <F2> :call HideNumber()<CR>
-nnoremap <F3> :set list! list?<CR>
+nnoremap <F3> :nohl<CR>
 nnoremap <F4> :set wrap! wrap?<CR>
               "set paste
 set pastetoggle=<F5>            "    when in insert mode, press <F5> to go to
@@ -382,44 +311,21 @@ autocmd BufNewFile,BufRead *.py inoremap # X<c-h>#
 noremap <silent><leader>/ :nohls<CR>
 
 " --------tab/buffer相关
-
-"Use arrow key to change buffer"
-" TODO: 如何跳转到确定的buffer?
-" :b1 :b2   :bf :bl
-nnoremap [b :bprevious<cr>
-nnoremap ]b :bnext<cr>
+nnoremap bp :bprevious<cr>
+nnoremap bn :bnext<cr>
 noremap <left> :bp<CR>
 noremap <right> :bn<CR>
-
-
-" tab 操作
-" TODO: ctrl + n 变成切换tab的方法
-" http://vim.wikia.com/wiki/Alternative_tab_navigation
-" http://stackoverflow.com/questions/2005214/switching-to-a-particular-tab-in-vim
-"map <C-2> 2gt
-map <leader>th :tabfirst<cr>
-map <leader>tl :tablast<cr>
-
-map <leader>tj :tabnext<cr>
-map <leader>tk :tabprev<cr>
-map <leader>tn :tabnext<cr>
-map <leader>tp :tabprev<cr>
-
-map <leader>te :tabedit<cr>
-map <leader>td :tabclose<cr>
-map <leader>tm :tabm<cr>
 
 
 " 新建tab  Ctrl+t
 nnoremap <C-t>     :tabnew<CR>
 inoremap <C-t>     <Esc>:tabnew<CR>
-" TODO: 配置成功这里, 切换更方便, 两个键
-" nnoremap <C-S-tab> :tabprevious<CR>
-" nnoremap <C-tab>   :tabnext<CR>
-" inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-" inoremap <C-tab>   <Esc>:tabnext<CR>i
-" nnoremap <C-Left> :tabprevious<CR>
-" nnoremap <C-Right> :tabnext<CR>
+
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i inoremap <C-tab>   <Esc>:tabnext<CR>i
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
 
 " normal模式下切换到确切的tab
 noremap <leader>1 1gt
@@ -462,18 +368,10 @@ nnoremap <leader>v V`}
 " w!! to sudo & write a file
 cmap w!! w !sudo tee >/dev/null %
 
-" kj 替换 Esc
-"inoremap kj <Esc>
-
 " 滚动Speed up scrolling of the viewport slightly
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
 
-
-"Jump to start and end of line using the home row keys
-" 增强tab操作, 导致这个会有问题, 考虑换键
-"nmap t o<ESC>k
-"nmap T O<ESC>j
 
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
@@ -491,10 +389,7 @@ nnoremap U <C-r>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-"==========================================
 " FileType Settings  文件类型设置
-"==========================================
-
 " Python 文件的一般设置，比如不要 tab 等
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 autocmd FileType ruby set tabstop=4 shiftwidth=4 softtabstop=4 expandtab ai
@@ -538,9 +433,7 @@ if has("autocmd")
   endif
 endif
 
-"==========================================
 " Theme Settings  主题设置
-"==========================================
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -560,15 +453,9 @@ if has("gui_running")
 endif
 
 " theme主题
-set background=dark
 set t_Co=256
-colorscheme solarized
-" colorscheme molokai
-" colorscheme Tomorrow-Night
-" colorscheme Tomorrow-Night-Bright
-" colorscheme desert
-
-
+"set background=dark
+colorscheme desert
 
 "设置标记一列的背景颜色和数字一行颜色一致
 hi! link SignColumn   LineNr
