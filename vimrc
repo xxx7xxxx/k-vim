@@ -7,6 +7,7 @@ endif
 " General Settings
 syntax on
 filetype plugin indent on
+set nocompatible
 set autoread
 set nobackup
 set noswapfile
@@ -28,6 +29,8 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set nofoldenable
+set nospell
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
