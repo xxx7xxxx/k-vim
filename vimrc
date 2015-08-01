@@ -11,7 +11,7 @@ endif
 filetype plugin indent on
 
 " General Settings
-set guifont=inconsolata:h20          " 字体 && 字号
+set guifont=monaco:h20          " 字体 && 字号
 set history=2000
 filetype on
 filetype indent on
@@ -229,39 +229,25 @@ nnoremap gj j
 
 " F1 - F6 设置  随时改
 " F1 废弃这个键,防止调出系统帮助
-" F2 行号开关，用于鼠标复制代码用
-" F3 去掉高亮
-" F4 换行开关
-" F5 粘贴模式paste_mode开关,用于有格式的代码粘贴
+" F2 NERDTree
+" F3 NERDTreeClose
+" F4 去掉高亮
+" F5 换行开关
 " F6 语法开关，关闭语法可以加快大文件的展示
 
 " I can type :help on my own, thanks.  Protect your fat fingers from the evils of <F1>
 noremap <F1> <Esc>"
 
 ""为方便复制，用<F2>开启/关闭行号显示:
-function! HideNumber()
-  if(&relativenumber == &number)
-    set relativenumber! number!
-  elseif(&number)
-    set number!
-  else
-    set relativenumber!
-  endif
-  set number?
-endfunc
-nnoremap <F2> :call HideNumber()<CR>
-nnoremap <F3> :nohl<CR>
-nnoremap <F4> :set wrap! wrap?<CR>
-              "set paste
-set pastetoggle=<F5>            "    when in insert mode, press <F5> to go to
-                                "    paste mode, where you can paste mass data
-                                "    that won't be autoindented
+nnoremap <F2> :NERDTree<CR>
+nnoremap <F3> :NERDTreeClose<CR>
+nnoremap <F4> :nohl<CR>
+nnoremap <F5> :set wrap! wrap?<CR>
 
 " disbale paste mode when leaving insert mode
 au InsertLeave * set nopaste
 
 nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
-
 
 "Smart way to move between windows 分屏窗口移动
 map <C-j> <C-W>j
