@@ -116,6 +116,7 @@ nnoremap <F3> :NERDTreeClose<CR>
 nnoremap <F4> :nohl<CR>
 nnoremap <F5> :set wrap! wrap?<CR>
 nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
+nnoremap <F8> :FixWhitespace<cr>
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
