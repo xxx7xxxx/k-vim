@@ -111,12 +111,27 @@ nnoremap gk k
 nnoremap j gj
 nnoremap gj j
 noremap <F1> <Esc>"
-nnoremap <F2> :NERDTree<CR>
-nnoremap <F3> :NERDTreeClose<CR>
-nnoremap <F4> :nohl<CR>
-nnoremap <F5> :set wrap! wrap?<CR>
-nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
-nnoremap <F8> :FixWhitespace<cr>
+noremap <F2> :NERDTree<CR>
+noremap <F3> :NERDTreeClose<CR>
+noremap <F4> :nohl<CR>
+noremap <F5> :QuickRun<CR>
+noremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
+noremap <F7> :TagbarToggle<CR>
+noremap <F8> :FixWhitespace<cr>
+noremap <F9> :set wrap! wrap?<CR>
+
+imap <F1> <ESC><F1>
+imap <F2> <ESC><F2>
+imap <F3> <ESC><F3>
+imap <F4> <ESC><F4>
+imap <F5> <ESC><F5>
+imap <F6> <ESC><F6>
+imap <F7> <ESC><F7>
+imap <F8> <ESC><F8>
+imap <F9> <ESC><F9>
+
+
+
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h

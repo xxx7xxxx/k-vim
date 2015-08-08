@@ -182,7 +182,7 @@ hi CtrlSpaceStatus   guifg=#839496 guibg=#002b36 gui=reverse term=reverse cterm=
 
 
 Bundle 'majutsushi/tagbar'
-nmap <F7> :TagbarToggle<CR>
+"noremap <F7> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 " for ruby
 let g:tagbar_type_ruby = {
@@ -234,7 +234,7 @@ let g:quickrun_config = {
 
 let g:quickrun_no_default_key_mappings = 1
 nmap <Leader>r <Plug>(quickrun)
-map <F9> :QuickRun<CR>
+"map <F9> :QuickRun<CR>
 
 Bundle 'kevinw/pyflakes-vim'
 let g:pyflakes_use_quickfix = 0
