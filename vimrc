@@ -191,6 +191,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 autocmd FileType ruby set tabstop=4 shiftwidth=4 softtabstop=4 expandtab ai
+autocmd BufRead,BufNewFile *.asm set filetype=nasm
 
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
