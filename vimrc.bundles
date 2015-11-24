@@ -248,3 +248,12 @@ let python_highlight_all = 1
 
 Bundle 'evanmiller/nginx-vim-syntax'
 let g:ctrlspace_default_mapping_key="\<C-q>"
+
+Bundle 'fatih/vim-go'
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_autodetect_gopath = 1
+let g:go_disable_autoinstall = 1
