@@ -205,7 +205,7 @@ function! AutoSetFileHead()
         call setline(1, "\#!/bin/bash")
     endif
     if &filetype == 'python'
-        call setline(1, "\#!/usr/bin/env python3")
+        call setline(1, "\#! /usr/bin/env python3")
         call append(1, "\# encoding: utf-8")
     endif
     normal G
