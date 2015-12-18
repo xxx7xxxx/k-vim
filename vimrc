@@ -138,7 +138,7 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 noremap H ^
 noremap L $
-nnoremap ; :
+"nnoremap ; :
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 map <space> /
