@@ -13,8 +13,9 @@ set nobackup
 set noswapfile
 set shortmess=atI
 set history=2000
-set selection=inclusive
-set selectmode=mouse,key
+"set selection=inclusive
+"set selectmode=key
+set clipboard=unnamed
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o
 set title
 set novisualbell
@@ -115,12 +116,11 @@ noremap <F2> :NERDTree<CR>
 noremap <F3> :NERDTreeClose<CR>
 noremap <F4> :nohl<CR>
 noremap <F5> :QuickRun<CR>
-noremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
+set pastetoggle=<F6>
 noremap <F7> :TagbarToggle<CR>
 noremap <F8> :FixWhitespace<cr>
 noremap <F9> :set wrap! wrap?<CR>
-
-imap <F1> <ESC><F1>
+imap  <F1> <ESC><F1>
 imap <F2> <ESC><F2>
 imap <F3> <ESC><F3>
 imap <F4> <ESC><F4>
@@ -188,7 +188,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Special Language Settings
-autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,java,go,javascript,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 autocmd FileType ruby set tabstop=4 shiftwidth=4 softtabstop=4 expandtab ai
 autocmd BufRead,BufNewFile *.asm set filetype=nasm
@@ -205,8 +205,8 @@ function! AutoSetFileHead()
         call setline(1, "\#!/bin/bash")
     endif
     if &filetype == 'python'
-        call setline(1, "\#! /usr/bin/env python3")
-        call append(1, "\# encoding: utf-8")
+        call setline(1, "\#! /usr/bin/env python")
+        call append(1, "\# -*- encoding: utf-8 -*-")
     endif
     normal G
     normal o
