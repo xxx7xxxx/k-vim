@@ -112,18 +112,7 @@ Bundle 'bronson/vim-trailing-whitespace'
 map <leader><space> :FixWhitespace<cr>
 
 
-Bundle 'junegunn/vim-easy-align'
-" easyalign {{{
-    vmap <Leader>a <Plug>(EasyAlign)
-    nmap <Leader>a <Plug>(EasyAlign)
-    if !exists('g:easy_align_delimiters')
-    let g:easy_align_delimiters = {}
-    endif
-    let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
-" }}}
-
-
-Bundle 'Lokaltog/vim-easymotion'
+Bundle 'easymotion/vim-easymotion'
 " easymotion {{{
     let g:EasyMotion_smartcase = 1
     map <Leader><leader>h <Plug>(easymotion-linebackward)
@@ -134,10 +123,22 @@ Bundle 'Lokaltog/vim-easymotion'
 " }}}
 
 
+Bundle 'junegunn/vim-easy-align'
+" easyalign {{{
+    vmap <leader>a <plug>(easyAlign)
+    nmap <Leader>a <Plug>(EasyAlign)
+    if !exists('g:easy_align_delimiters')
+    let g:easy_align_delimiters = {}
+    endif
+    let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
+" }}}
+
 
 Bundle 'vim-scripts/matchit.zip'
 
+
 Bundle "kshenoy/vim-signature"
+
 
 Bundle 'bling/vim-airline'
 " airline {{{
@@ -289,6 +290,7 @@ let g:go_autodetect_gopath = 1
 let g:go_disable_autoinstall = 1
 
 Bundle 'klen/python-mode'
+let g:pymode_lint_ignore = "C0111"
 
 Bundle 'unblevable/quick-scope'
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
