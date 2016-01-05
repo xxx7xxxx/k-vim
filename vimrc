@@ -1,11 +1,15 @@
 
 " install Vundle bundles
+let mapleader = ','
+let g:mapleader = ','
+
+syntax on
+
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
 " General Settings
-syntax on
 filetype plugin indent on
 set nocompatible
 set autoread
@@ -13,8 +17,6 @@ set nobackup
 set noswapfile
 set shortmess=atI
 set history=2000
-"set selection=inclusive
-"set selectmode=key
 set clipboard=unnamed
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o
 set title
@@ -89,7 +91,7 @@ set ttyfast
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set termencoding=utf-8
-set ffs=unix,dos,mac
+set ffs=unix,mac,dos
 set formatoptions+=m
 set formatoptions+=B
 
@@ -101,8 +103,6 @@ autocmd TabLeave * let g:last_active_tab = tabpagenr()
 let g:last_active_tab = 1
 
 " Map Settings
-let mapleader = ','
-let g:mapleader = ','
 map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
@@ -111,6 +111,8 @@ nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
+nnoremap <leader>q :q<CR>
+nnoremap <leader>w :w<CR>
 noremap <F1> <Esc>"
 noremap <F2> :NERDTree<CR>
 noremap <F3> :NERDTreeClose<CR>
