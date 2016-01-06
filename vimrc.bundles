@@ -290,6 +290,8 @@ let g:go_disable_autoinstall = 1
 
 Bundle 'klen/python-mode'
 let g:pymode_lint_ignore = "C0111"
+let g:pymode_rope_goto_definition_bind = '<C-a>'
+let g:pymode_rope_goto_definition_cmd = 'vnew'
 
 Bundle 'unblevable/quick-scope'
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
