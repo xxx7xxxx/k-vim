@@ -109,24 +109,23 @@ Bundle 'tpope/vim-repeat'
 
 
 Bundle 'bronson/vim-trailing-whitespace'
-map <leader><space> :FixWhitespace<cr>
 
 
 Bundle 'easymotion/vim-easymotion'
 " easymotion {{{
     let g:EasyMotion_smartcase = 1
-    map <Leader><leader>h <Plug>(easymotion-linebackward)
-    map <Leader><Leader>j <Plug>(easymotion-j)
-    map <Leader><Leader>k <Plug>(easymotion-k)
-    map <Leader><leader>l <Plug>(easymotion-lineforward)
-    map <Leader><leader>. <Plug>(easymotion-repeat)
+    map <leader>h <Plug>(easymotion-linebackward)
+    map <leader>j <Plug>(easymotion-j)
+    map <leader>k <Plug>(easymotion-k)
+    map <leader>l <Plug>(easymotion-lineforward)
+    map <leader>. <Plug>(easymotion-repeat)
 " }}}
 
 
 Bundle 'junegunn/vim-easy-align'
 " easyalign {{{
-    vmap <leader>a <plug>(easyAlign)
-    nmap <Leader>a <Plug>(EasyAlign)
+    xmap ga <Plug>(EasyAlign)
+    nmap ga <Plug>(EasyAlign)
     if !exists('g:easy_align_delimiters')
     let g:easy_align_delimiters = {}
     endif

@@ -2,6 +2,7 @@
 " install Vundle bundles
 let mapleader = ','
 let g:mapleader = ','
+map <space> <leader>
 
 syntax on
 
@@ -111,6 +112,7 @@ nnoremap j gj
 nnoremap gj j
 nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
+noremap Q :q<CR>
 noremap <F1> <Esc>"
 noremap <F2> :NERDTree<CR>
 noremap <F3> :NERDTreeClose<CR>
@@ -137,7 +139,7 @@ noremap H ^
 noremap L $
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
-map <space> /
+"map <space> /
 nnoremap / /\v
 vnoremap / /\v
 nnoremap <silent> n nzz
