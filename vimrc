@@ -129,18 +129,16 @@ imap <F6> <ESC><F6>
 imap <F7> <ESC><F7>
 imap <F8> <ESC><F8>
 imap <F9> <ESC><F9>
-
-
-
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 noremap H ^
 noremap L $
-"nnoremap ; :
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
+cabbrev h vert help
+cabbrev v vsp
 map <space> /
 nnoremap / /\v
 vnoremap / /\v
