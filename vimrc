@@ -137,8 +137,6 @@ noremap H ^
 noremap L $
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
-cabbrev h vert help
-cabbrev v vsp
 map <space> /
 nnoremap / /\v
 vnoremap / /\v
