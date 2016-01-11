@@ -133,6 +133,9 @@ imap <F8> <ESC><F8>
 imap <F9> <ESC><F9>
 map <C-j> <C-W>j
 map <C-k> <C-W>k
+if has('nvim')
+     nmap <BS> <C-W>h
+endif
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 noremap H ^
