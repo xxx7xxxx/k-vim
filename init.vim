@@ -6,8 +6,8 @@ map <space> <leader>
 
 syntax on
 
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+if filereadable(expand("./.vimrc.bundles"))
+  source ./.vimrc.bundles
 endif
 
 " General Settings
