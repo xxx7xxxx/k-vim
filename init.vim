@@ -6,8 +6,8 @@ map <space> <leader>
 
 syntax on
 
-if filereadable(expand("./.vimrc.bundles"))
-  source ./.vimrc.bundles
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
 endif
 
 " General Settings
@@ -114,8 +114,8 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
 noremap Q :q<CR>
 noremap <F1> <Esc>"
-noremap <F2> :NERDTree<CR>
-noremap <F3> :NERDTreeClose<CR>
+noremap <F2> :NERDTreeToggle<CR>
+noremap <F3> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 noremap <F4> :nohl<CR>
 noremap <F5> :QuickRun<CR>
 set pastetoggle=<F6>
@@ -139,7 +139,6 @@ noremap H ^
 noremap L $
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
-"map <space> /
 nnoremap / /\v
 vnoremap / /\v
 nnoremap <silent> n nzz
