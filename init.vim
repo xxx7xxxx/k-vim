@@ -43,7 +43,7 @@ colorscheme Tomorrow-Night-bright
 set background=dark
 set t_Co=256
 set guifont=monaco:20
-set cursorcolumn
+set cc=80
 set cursorline
 set mouse=a
 set mousehide
@@ -222,23 +222,6 @@ if has("autocmd")
     autocmd Syntax * call matchadd('Todo',  '\W\zs\(TODO\|FIXME\|CHANGED\|XXX\|BUG\|HACK\)')
     autocmd Syntax * call matchadd('Debug', '\W\zs\(NOTE\|INFO\|IDEA\|NOTICE\)')
   endif
-endif
-
-" GUI Settings
-if has("gui_running")
-    set guifont=Monaco:h14
-    if has("gui_gtk2")   "GTK2
-        set guifont=Monaco\ 12,Monospace\ 12
-    endif
-    set guioptions-=T
-    set guioptions+=e
-    set guioptions-=r
-    set guioptions-=L
-    set guitablabel=%M\ %t
-    set showtabline=1
-    set linespace=2
-    set noimd
-    set t_Co=256
 endif
 
 " Spell Error Settings
