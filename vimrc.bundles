@@ -254,10 +254,10 @@ let g:go_highlight_build_constraints = 1
 let g:go_autodetect_gopath = 1
 let g:go_disable_autoinstall = 1
 
-Bundle 'klen/python-mode'
-let g:pymode_lint = 0
-let g:pymode_rope_goto_definition_bind = '<C-a>'
-let g:pymode_rope_goto_definition_cmd = 'vnew'
+" Bundle 'klen/python-mode'
+" let g:pymode_lint = 0
+" let g:pymode_rope_goto_definition_bind = '<C-a>'
+" let g:pymode_rope_goto_definition_cmd = 'vnew'
 
 Bundle 'unblevable/quick-scope'
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
