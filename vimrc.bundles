@@ -265,4 +265,4 @@ let g:go_disable_autoinstall = 1
 Bundle 'unblevable/quick-scope'
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-Bundle 'ehamberg/vim-cute-python'
+Bundle 'hdima/python-syntax'
