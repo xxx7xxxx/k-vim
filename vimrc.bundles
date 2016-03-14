@@ -266,3 +266,9 @@ Bundle 'unblevable/quick-scope'
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 Bundle 'hdima/python-syntax'
+
+Bundle 'wlangstroth/vim-racket'
+
+Bundle 'tweekmonster/braceless.vim'
+
+Bundle 'mechatroner/rainbow_csv'
