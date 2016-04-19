@@ -11,6 +11,7 @@ if filereadable(expand("~/.vimrc.bundles"))
 endif
 
 " General Settings
+language en_US
 filetype plugin indent on
 set nocompatible
 set autoread
