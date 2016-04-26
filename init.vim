@@ -40,7 +40,7 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 autocmd BufNewFile,BufRead *.py inoremap # X<c-h>#
-colorscheme Tomorrow-Night-bright
+colorscheme Tomorrow-Night-Bright
 set background=dark
 set t_Co=256
 set guifont=monaco:20
