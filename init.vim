@@ -60,9 +60,9 @@ set showmatch
 set matchtime=2
 set smartindent
 set autoindent
-set tabstop=8
-set shiftwidth=8
-set softtabstop=8
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set smarttab
 set expandtab
 set shiftround
@@ -188,10 +188,7 @@ nnoremap U <C-r>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-" Special Language Settings
-autocmd FileType c,cpp,java,go,javascript,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
-autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
-autocmd FileType ruby set tabstop=4 shiftwidth=4 softtabstop=4 expandtab ai
+autocmd FileType c,cpp set tabstop=8 shiftwidth=8 expandtab ai
 autocmd BufRead,BufNewFile *.asm set filetype=nasm
 
 fun! <SID>StripTrailingWhitespaces()
