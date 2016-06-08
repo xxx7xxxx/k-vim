@@ -19,7 +19,7 @@ set nobackup
 set noswapfile
 set shortmess=atI
 set history=2000
-set clipboard=unnamed
+" set clipboard+=unnamedplus
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o
 set title
 set novisualbell
