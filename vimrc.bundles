@@ -58,6 +58,7 @@ Bundle 'Valloric/YouCompleteMe'
         \ 'tagbar' : 1,
         \ 'gitcommit' : 1,
         \ 'c': 1,
+        \ 'cpp': 1,
         \}
 " }}}
 
@@ -247,6 +248,7 @@ let g:quickrun_no_default_key_mappings = 1
 nmap <Leader>r <Plug>(quickrun)
 
 Bundle 'evanmiller/nginx-vim-syntax'
+au BufRead,BufNewFile *.conf set ft=nginx
 let g:ctrlspace_default_mapping_key="\<C-q>"
 
 Bundle 'fatih/vim-go'
