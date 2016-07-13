@@ -189,6 +189,7 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 autocmd FileType c,cpp set tabstop=8 shiftwidth=8 expandtab ai
+autocmd FileType ruby set tabstop=2 shiftwidth=2 expandtab ai
 autocmd BufRead,BufNewFile *.asm set filetype=nasm
 
 fun! <SID>StripTrailingWhitespaces()

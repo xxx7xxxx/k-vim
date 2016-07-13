@@ -5,7 +5,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'scrooloose/syntastic'
+" Bundle 'scrooloose/syntastic'
 let g:syntastic_error_symbol='>>'
 let g:syntastic_warning_symbol='>'
 let g:syntastic_check_on_open=1
@@ -275,3 +275,7 @@ Bundle 'wlangstroth/vim-racket'
 Bundle 'tweekmonster/braceless.vim'
 
 Bundle 'mechatroner/rainbow_csv'
+
+Bundle 'vim-ruby/vim-ruby'
+
+Bundle 'tpope/vim-rails'
