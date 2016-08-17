@@ -57,8 +57,6 @@ Bundle 'Valloric/YouCompleteMe'
     let g:ycm_filetype_blacklist = {
         \ 'tagbar' : 1,
         \ 'gitcommit' : 1,
-        \ 'c': 1,
-        \ 'cpp': 1,
         \}
 " }}}
 
