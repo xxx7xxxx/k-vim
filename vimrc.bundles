@@ -24,8 +24,7 @@ Plugin 'Valloric/YouCompleteMe'
     endif
 
 
-Plugin 'Raimondi/delimitMate'
-    au FileType python let b:delimitMate_nesting_quotes = ['"']
+Plugin 'jiangmiao/auto-pairs'
 
 
 Plugin 'scrooloose/nerdcommenter'
