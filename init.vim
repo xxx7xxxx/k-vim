@@ -24,7 +24,6 @@ set wildignore=*.swp,*.bak,*.pyc,*.class,*.o
 set title
 set novisualbell
 set noerrorbells
-set t_vb=
 set tm=500
 set viminfo^=%
 set magic
@@ -42,7 +41,6 @@ endif
 autocmd BufNewFile,BufRead *.py inoremap # X<c-h>#
 colorscheme Tomorrow-Night-Bright
 set background=dark
-set t_Co=256
 set guifont=monaco:20
 set cc=80
 set cursorline
@@ -85,7 +83,6 @@ endfunc
 " Buffers Settings
 set hidden
 set wildmode=list:longest
-set ttyfast
 
 " FileEncode Settings
 set encoding=utf-8
