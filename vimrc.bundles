@@ -130,10 +130,4 @@ Plugin 'wlangstroth/vim-racket'
 Plugin 'mechatroner/rainbow_csv'
 
 
-Plugin 'vim-ruby/vim-ruby'
-
-
-Plugin 'tpope/vim-rails'
-
-
 call vundle#end()
