@@ -98,11 +98,6 @@ Plugin 'thinca/vim-quickrun'
     nmap <Leader>r <Plug>(quickrun)
 
 
-Plugin 'evanmiller/nginx-vim-syntax'
-    au BufRead,BufNewFile *.conf set ft=nginx
-    let g:ctrlspace_default_mapping_key="\<C-q>"
-
-
 Plugin 'fatih/vim-go'
     let g:go_template_autocreate = 0
     let g:go_highlight_types = 1
