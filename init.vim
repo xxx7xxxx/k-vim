@@ -12,7 +12,6 @@ endif
 
 " General Settings
 filetype plugin indent on
-set nocompatible
 set autoread
 set nobackup
 set noswapfile
