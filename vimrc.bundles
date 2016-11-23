@@ -73,7 +73,6 @@ Plugin 'scrooloose/nerdtree'
     let g:nerdtree_tabs_open_on_gui_startup=0
 
 
-
 Plugin 'jistr/vim-nerdtree-tabs'
     map <Leader>n <plug>NERDTreeTabsToggle<CR>
     let g:nerdtree_tabs_synchronize_view=0
