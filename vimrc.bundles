@@ -25,13 +25,13 @@ Plugin 'Valloric/YouCompleteMe'
 
 
 Plugin 'jiangmiao/auto-pairs'
+    let g:AutoPairsMultilineClose = 0
 
 
 Plugin 'scrooloose/nerdcommenter'
     let g:NERDSpaceDelims=1
 
-
-Plugin 'tpope/vim-surround'
+" Plugin 'tpope/vim-surround'
 
 
 Plugin 'tpope/vim-repeat'
@@ -79,10 +79,6 @@ Plugin 'jistr/vim-nerdtree-tabs'
     let g:nerdtree_tabs_synchronize_focus=0
 
 
-Plugin 'vim-ctrlspace/vim-ctrlspace'
-    map <leader>s :CtrlSpace<cr>
-
-
 Plugin 'majutsushi/tagbar'
     let g:tagbar_autofocus = 1
 
@@ -115,13 +111,12 @@ Plugin 'unblevable/quick-scope'
     let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 
-Plugin 'hdima/python-syntax'
+" Plugin 'wlangstroth/vim-racket'
 
 
-Plugin 'wlangstroth/vim-racket'
+" Plugin 'mechatroner/rainbow_csv'
 
 
-Plugin 'mechatroner/rainbow_csv'
-
+" Plugin 'cespare/vim-toml'
 
 call vundle#end()
