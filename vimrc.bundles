@@ -122,4 +122,6 @@ Plug 'unblevable/quick-scope'
 
 " Plug 'cespare/vim-toml'
 
+Plug 'elzr/vim-json'
+
 call plug#end()
