@@ -1,12 +1,10 @@
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 
-Plugin 'gmarik/vundle'
+Plug 'gmarik/vundle'
 
 
-Plugin 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'on': [] }
     let g:ycm_show_diagnostics_ui = 0
     let g:ycm_key_list_select_completion = ['<Down>']
     let g:ycm_key_list_previous_completion = ['<Up>']
@@ -23,24 +21,29 @@ Plugin 'Valloric/YouCompleteMe'
         let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
     endif
 
+augroup load_us_ycm
+  autocmd!
+  autocmd InsertEnter * call plug#load('YouCompleteMe')
+                     \| autocmd! load_us_ycm
+augroup END
 
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
     let g:AutoPairsMultilineClose = 0
 
 
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
     let g:NERDSpaceDelims=1
 
-" Plugin 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
 
 
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 
 
-Plugin 'bronson/vim-trailing-whitespace'
+Plug 'bronson/vim-trailing-whitespace'
 
 
-Plugin 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
     let g:EasyMotion_smartcase = 1
     map <leader>h <Plug>(easymotion-linebackward)
     map <leader>j <Plug>(easymotion-j)
@@ -52,14 +55,14 @@ Plugin 'easymotion/vim-easymotion'
     nmap <leader>g <Plug>(easymotion-overwin-f2)
 
 
-Plugin 'kshenoy/vim-signature'
+Plug 'kshenoy/vim-signature'
 
 
-Plugin 'luochen1990/rainbow'
+Plug 'luochen1990/rainbow'
     let g:rainbow_active = 1
 
 
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
     map <leader>n :NERDTreeToggle<CR>
     let NERDTreeHighlightCursorline=1
     let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$', '^\.hg$' ]
@@ -73,17 +76,17 @@ Plugin 'scrooloose/nerdtree'
     let g:nerdtree_tabs_open_on_gui_startup=0
 
 
-Plugin 'jistr/vim-nerdtree-tabs'
+Plug 'jistr/vim-nerdtree-tabs'
     map <Leader>n <plug>NERDTreeTabsToggle<CR>
     let g:nerdtree_tabs_synchronize_view=0
     let g:nerdtree_tabs_synchronize_focus=0
 
 
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
     let g:tagbar_autofocus = 1
 
 
-Plugin 'thinca/vim-quickrun'
+Plug 'thinca/vim-quickrun'
     let g:quickrun_config = {
     \   "_" : {
     \       "outputter" : "message",
@@ -93,7 +96,7 @@ Plugin 'thinca/vim-quickrun'
     nmap <Leader>r <Plug>(quickrun)
 
 
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go'
     let g:go_template_autocreate = 0
     let g:go_highlight_types = 1
     let g:go_highlight_functions = 1
@@ -107,16 +110,16 @@ Plugin 'fatih/vim-go'
     let g:go_fmt_fail_silently = 1
 
 
-Plugin 'unblevable/quick-scope'
+Plug 'unblevable/quick-scope'
     let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 
-" Plugin 'wlangstroth/vim-racket'
+" Plug 'wlangstroth/vim-racket'
 
 
-" Plugin 'mechatroner/rainbow_csv'
+" Plug 'mechatroner/rainbow_csv'
 
 
-" Plugin 'cespare/vim-toml'
+" Plug 'cespare/vim-toml'
 
-call vundle#end()
+call plug#end()

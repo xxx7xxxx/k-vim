@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/longyun/code/eleme-ios/design/protobuf/output/go'
+let g:netrw_dirhist_2='/Users/longyun/.config/nvim'
+let g:netrw_dirhist_3='/Users/longyun/.config/nvim/bundle/YouCompleteMe/plugin'
+let g:netrw_dirhist_4='/Users/longyun/.config/nvim/bundle/YouCompleteMe'
