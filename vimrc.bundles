@@ -125,4 +125,6 @@ Plug 'unblevable/quick-scope'
 
 Plug 'elzr/vim-json'
 
+Plug 'plasticboy/vim-markdown'
+
 call plug#end()
