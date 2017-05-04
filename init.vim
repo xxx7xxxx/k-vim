@@ -13,6 +13,7 @@ endif
 filetype plugin indent on
 set autoread
 set nobackup
+set guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20
 set noswapfile
 set shortmess=atI
 set history=2000
