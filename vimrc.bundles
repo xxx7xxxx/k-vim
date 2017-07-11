@@ -5,6 +5,7 @@ Plug 'gmarik/vundle'
 
 
 Plug 'Valloric/YouCompleteMe', { 'on': [] }
+    let g:ycm_complete_in_comments = 1
     let g:ycm_show_diagnostics_ui = 0
     let g:ycm_key_list_select_completion = ['<Down>']
     let g:ycm_key_list_previous_completion = ['<Up>']
@@ -54,9 +55,6 @@ Plug 'easymotion/vim-easymotion'
     map <Leader>f <Plug>(easymotion-bd-f)
     nmap <Leader>f <Plug>(easymotion-overwin-f)
     nmap <leader>g <Plug>(easymotion-overwin-f2)
-
-
-Plug 'kshenoy/vim-signature'
 
 
 Plug 'luochen1990/rainbow'
