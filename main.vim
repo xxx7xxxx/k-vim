@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
+
 Plug 'chriskempson/vim-tomorrow-theme'
 
 
@@ -11,33 +12,10 @@ Plug 'chr4/nginx.vim'
     setlocal commentstring=#\ %s
 
 
-" Plug 'Valloric/YouCompleteMe', { 'on': [] }
-"     let g:ycm_complete_in_comments = 1
-"     let g:ycm_show_diagnostics_ui = 0
-"     let g:ycm_key_list_select_completion = ['<Down>']
-"     let g:ycm_key_list_previous_completion = ['<Up>']
-"     let g:ycm_seed_identifiers_with_syntax=1
-"     let g:ycm_goto_buffer_command = 'vertical-split'
-"
-"     nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
-"     nnoremap <leader>f :YcmCompleter GoToDeclaration<CR>
-"
-"     if !empty(glob("~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"))
-"         let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"
-"     endif
-"     if !empty(glob("~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"))
-"         let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-"     endif
-"
-" augroup load_us_ycm
-"   autocmd!
-"   autocmd InsertEnter * call plug#load('YouCompleteMe')
-"                      \| autocmd! load_us_ycm
-" augroup END
-
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
+    let g:deoplete#enable_at_startup = 1
 Plug 'zchee/deoplete-go', { 'do': 'make'}
+
 
 Plug 'jiangmiao/auto-pairs'
     let g:AutoPairsMultilineClose = 0
@@ -46,8 +24,6 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'scrooloose/nerdcommenter'
     let g:NERDSpaceDelims=1
-
-" Plug 'tpope/vim-surround'
 
 
 Plug 'tpope/vim-repeat'
@@ -86,12 +62,6 @@ Plug 'scrooloose/nerdtree'
     let g:nerdtree_tabs_open_on_gui_startup=0
 
 
-" Plug 'jistr/vim-nerdtree-tabs'
-"     map <Leader>n <plug>NERDTreeTabsToggle<CR>
-"     let g:nerdtree_tabs_synchronize_view=0
-"     let g:nerdtree_tabs_synchronize_focus=0
-
-
 Plug 'majutsushi/tagbar'
     let g:tagbar_autofocus = 1
 
@@ -127,13 +97,8 @@ Plug 'unblevable/quick-scope'
     let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 
-" Plug 'wlangstroth/vim-racket'
-
-
-" Plug 'mechatroner/rainbow_csv'
-
-
 Plug 'cespare/vim-toml'
+
 
 Plug 'elzr/vim-json'
 
@@ -141,17 +106,8 @@ Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
 
 
-" Plug 'vim-ruby/vim-ruby'
-
-
-" Plug '/usr/local/opt/fzf'
-" Plug 'junegunn/fzf.vim'
-
-
-" Plug 'jparise/vim-graphql'
-
-
 Plug 'Yggdroot/indentLine'
 set list lcs=tab:\|\ 
+
 
 call plug#end()

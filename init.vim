@@ -5,6 +5,7 @@ source ~/.vim/main.vim
 syntax on
 
 cnoreabbrev help vert help
+cnoreabbrev h vert help
 " General Settings
 filetype plugin indent on
 set autoread
