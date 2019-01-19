@@ -1,32 +1,33 @@
 call plug#begin('~/.vim/plugged')
 
 
-Plug 'gmarik/vundle'
+" Plug 'Valloric/YouCompleteMe', { 'on': [] }
+"     let g:ycm_complete_in_comments = 1
+"     let g:ycm_show_diagnostics_ui = 0
+"     let g:ycm_key_list_select_completion = ['<Down>']
+"     let g:ycm_key_list_previous_completion = ['<Up>']
+"     let g:ycm_seed_identifiers_with_syntax=1
+"     let g:ycm_goto_buffer_command = 'vertical-split'
+"
+"     nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"     nnoremap <leader>f :YcmCompleter GoToDeclaration<CR>
+"
+"     if !empty(glob("~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"))
+"         let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"
+"     endif
+"     if !empty(glob("~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"))
+"         let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+"     endif
+"
+" augroup load_us_ycm
+"   autocmd!
+"   autocmd InsertEnter * call plug#load('YouCompleteMe')
+"                      \| autocmd! load_us_ycm
+" augroup END
 
-
-Plug 'Valloric/YouCompleteMe', { 'on': [] }
-    let g:ycm_complete_in_comments = 1
-    let g:ycm_show_diagnostics_ui = 0
-    let g:ycm_key_list_select_completion = ['<Down>']
-    let g:ycm_key_list_previous_completion = ['<Up>']
-    let g:ycm_seed_identifiers_with_syntax=1
-    let g:ycm_goto_buffer_command = 'vertical-split'
-
-    nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
-    nnoremap <leader>f :YcmCompleter GoToDeclaration<CR>
-
-    if !empty(glob("~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"))
-        let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py"
-    endif
-    if !empty(glob("~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"))
-        let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-    endif
-
-augroup load_us_ycm
-  autocmd!
-  autocmd InsertEnter * call plug#load('YouCompleteMe')
-                     \| autocmd! load_us_ycm
-augroup END
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 Plug 'jiangmiao/auto-pairs'
     let g:AutoPairsMultilineClose = 0
@@ -75,10 +76,10 @@ Plug 'scrooloose/nerdtree'
     let g:nerdtree_tabs_open_on_gui_startup=0
 
 
-Plug 'jistr/vim-nerdtree-tabs'
-    map <Leader>n <plug>NERDTreeTabsToggle<CR>
-    let g:nerdtree_tabs_synchronize_view=0
-    let g:nerdtree_tabs_synchronize_focus=0
+" Plug 'jistr/vim-nerdtree-tabs'
+"     map <Leader>n <plug>NERDTreeTabsToggle<CR>
+"     let g:nerdtree_tabs_synchronize_view=0
+"     let g:nerdtree_tabs_synchronize_focus=0
 
 
 Plug 'majutsushi/tagbar'
@@ -96,6 +97,8 @@ Plug 'thinca/vim-quickrun'
 
 
 Plug 'fatih/vim-go'
+    let g:go_echo_command_info = 0
+    let g:go_def_mapping_enabled = 0
     let g:go_template_autocreate = 0
     let g:go_highlight_types = 1
     let g:go_highlight_functions = 1
@@ -106,7 +109,8 @@ Plug 'fatih/vim-go'
     let g:go_highlight_build_constraints = 1
     let g:go_autodetect_gopath = 1
     let g:go_fmt_command = "goimports"
-    let g:go_fmt_fail_silently = 1
+    " let g:go_fmt_fail_silently = 1
+    au FileType go nmap <Leader>d <Plug>(go-def-vertical)
 
 
 Plug 'unblevable/quick-scope'
@@ -119,13 +123,25 @@ Plug 'unblevable/quick-scope'
 " Plug 'mechatroner/rainbow_csv'
 
 
-" Plug 'cespare/vim-toml'
+Plug 'cespare/vim-toml'
 
 Plug 'elzr/vim-json'
+
 
 Plug 'plasticboy/vim-markdown'
 
 
-Plug 'vim-ruby/vim-ruby'
+" Plug 'vim-ruby/vim-ruby'
+
+
+" Plug '/usr/local/opt/fzf'
+" Plug 'junegunn/fzf.vim'
+
+
+" Plug 'jparise/vim-graphql'
+
+
+Plug 'Yggdroot/indentLine'
+set list lcs=tab:\|\ 
 
 call plug#end()

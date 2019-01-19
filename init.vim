@@ -1,14 +1,10 @@
-" install Vundle bundles
-let mapleader = ','
-let g:mapleader = ','
-map <space> <leader>
+let g:mapleader = ' '
+
+source ~/.vim/main.vim
 
 syntax on
 
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-endif
-
+cnoreabbrev help vert help
 " General Settings
 filetype plugin indent on
 set autoread
@@ -106,6 +102,7 @@ nnoremap k gk
 nnoremap gk k
 nnoremap j gj
 nnoremap gj j
+nnoremap <leader>n :nohl<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
 noremap Q :q<CR>
@@ -116,7 +113,7 @@ noremap <F4> :nohl<CR>
 noremap <F5> :QuickRun<CR>
 set pastetoggle=<F6>
 noremap <F7> :TagbarToggle<CR>
-noremap <F8> :FixWhitespace<cr>
+noremap <F8> :FixWhitespace<CR>
 noremap <F9> :set wrap! wrap?<CR>
 imap  <F1> <ESC><F1>
 imap <F2> <ESC><F2>
@@ -147,13 +144,14 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 nnoremap # *
 nnoremap * #
-nnoremap bp :bprevious<cr>
-nnoremap bn :bnext<cr>
+nnoremap bp :bprevious<CR>
+nnoremap bn :bnext<CR>
 noremap <Up> :bp<CR>
 noremap <Down> :bn<CR>
 noremap <Left> :tabprevious<CR>
 noremap <Right> :tabnext<CR>
-nnoremap <C-n> :call NumberToggle()<cr>
+nnoremap <C-g> :echo expand('%:p')<CR>
+nnoremap <C-n> :call NumberToggle()<CR>
 nnoremap <C-t> :tabnew<CR>
 inoremap <C-t> <Esc>:tabnew<CR>
 noremap <leader>1 1gt
@@ -165,9 +163,9 @@ noremap <leader>6 6gt
 noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
-noremap <leader>0 :tablast<cr>
-nnoremap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<cr>
-vnoremap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<cr>
+noremap <leader>0 :tablast<CR>
+nnoremap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<CR>
+vnoremap <silent> <leader>tt :execute 'tabnext ' . g:last_active_tab<CR>
 vnoremap < <gv
 vnoremap > >gv
 map Y y$
@@ -184,7 +182,8 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 autocmd FileType c,cpp,go set tabstop=8 shiftwidth=8 expandtab ai
-autocmd FileType ruby,json,toml,yaml,proto set tabstop=2 shiftwidth=2 expandtab ai
+autocmd FileType java,shell,markdown set tabstop=4 shiftwidth=4 expandtab ai
+autocmd FileType ruby,javascript,typescript,graphql,json,toml,yaml,proto set tabstop=2 shiftwidth=2 expandtab ai
 autocmd BufRead,BufNewFile *.asm set filetype=nasm
 
 fun! <SID>StripTrailingWhitespaces()
