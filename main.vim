@@ -1,5 +1,15 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'chriskempson/vim-tomorrow-theme'
+
+
+Plug 'chr4/nginx.vim'
+    au BufRead,BufNewFile *.nginx set ft=nginx
+    au BufRead,BufNewFile */etc/nginx/* set ft=nginx
+    au BufRead,BufNewFile */usr/local/nginx/conf/* set ft=nginx
+    au BufRead,BufNewFile nginx.conf set ft=nginx
+    setlocal commentstring=#\ %s
+
 
 " Plug 'Valloric/YouCompleteMe', { 'on': [] }
 "     let g:ycm_complete_in_comments = 1
