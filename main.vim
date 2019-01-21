@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 
-Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'flazz/vim-colorschemes'
 
 
 Plug 'chr4/nginx.vim'
@@ -34,14 +34,14 @@ Plug 'bronson/vim-trailing-whitespace'
 
 Plug 'easymotion/vim-easymotion'
     let g:EasyMotion_smartcase = 1
-    map <leader>h <Plug>(easymotion-linebackward)
-    map <leader>j <Plug>(easymotion-j)
-    map <leader>k <Plug>(easymotion-k)
-    map <leader>l <Plug>(easymotion-lineforward)
-    map <leader>. <Plug>(easymotion-repeat)
-    map <Leader>f <Plug>(easymotion-bd-f)
-    nmap <Leader>f <Plug>(easymotion-overwin-f)
-    nmap <leader>g <Plug>(easymotion-overwin-f2)
+    nnoremap <leader>h <Plug>(easymotion-linebackward)
+    nnoremap <leader>j <Plug>(easymotion-j)
+    nnoremap <leader>k <Plug>(easymotion-k)
+    nnoremap <leader>l <Plug>(easymotion-lineforward)
+    nnoremap <leader>. <Plug>(easymotion-repeat)
+    nnoremap <Leader>f <Plug>(easymotion-bd-f)
+    nnoremap <Leader>f <Plug>(easymotion-overwin-f)
+    nnoremap <leader>g <Plug>(easymotion-overwin-f2)
 
 
 Plug 'luochen1990/rainbow'
@@ -73,7 +73,7 @@ Plug 'thinca/vim-quickrun'
     \   },
     \}
     let g:quickrun_no_default_key_mappings = 1
-    nmap <Leader>r <Plug>(quickrun)
+    nnoremap <Leader>r <Plug>(quickrun)
 
 
 Plug 'fatih/vim-go'
@@ -90,7 +90,7 @@ Plug 'fatih/vim-go'
     let g:go_autodetect_gopath = 1
     let g:go_fmt_command = "goimports"
     " let g:go_fmt_fail_silently = 1
-    au FileType go nmap <Leader>d <Plug>(go-def-vertical)
+    autocmd FileType go nnoremap <leader>d <Plug>(go-def-vertical)
 
 
 Plug 'unblevable/quick-scope'
