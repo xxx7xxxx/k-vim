@@ -15,60 +15,34 @@ syntax on
 " Abbrs
 cnoreabbrev h vert h
 cnoreabbrev help vert help
+cnoreabbrev Q q
+cnoreabbrev Vsp vsp
+cnoreabbrev VSp vsp
+cnoreabbrev VSP vsp
 
 
 " Options
-set autoindent
-set autoread
-set background=dark
-set backspace=eol,start,indent
+set background=light
 set clipboard=unnamedplus
 set completeopt=longest,menu
 set cursorline
-set encoding=utf-8
-set expandtab
-set ffs=unix,mac,dos
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-set formatoptions+=B
 set formatoptions+=m
-set guifont=monaco:20
+set laststatus=0
 set hidden
-set history=2000
-set ignorecase
-set incsearch
 set laststatus=2
-set magic
-set matchtime=2
+set matchtime=1
 set mouse=a
-set mousehide
-set nobackup
-set noerrorbells
-set nofoldenable
-set nospell
+set noincsearch
 set noswapfile
-set novisualbell
 set nowrap
 set number
 set relativenumber
-set ruler
-set scrolloff=7
+set scrolloff=10
 set shiftround
-set shiftwidth=4
-set shortmess=atI
-set showcmd
 set showmatch
-set showmode
 set smartcase
 set smartindent
-set smarttab
-set softtabstop=4
-set tabstop=4
-set termencoding=utf-8
-set timeoutlen=1000
-set title
-set whichwrap+=<,>,h,l
-set wildignore=*.swp,*.bak,*.pyc,*.class,*.o
-set wildmenu
+set softtabstop=8
 set wildmode=list:longest
 
 
@@ -87,19 +61,18 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>p :set wrap!<cr>
 
 " Edit
-nnoremap m mk
-nnoremap ym y'k
+nnoremap db dib " delete inner () - equal to `onoremap b ib`
+nnoremap dB diB " delete inner {} - equal to `onoremap B iB`
+nnoremap dq di"
+nnoremap ds di'
+nnoremap U <C-r>
 
-" Motion
+" Movement
 noremap H ^
 noremap L $
 noremap Y y$
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
-nnoremap U <C-r>
-nnoremap <leader>q :q<cr>
-nnoremap dq di"
-nnoremap ds di'
 
 " Buffer
 noremap <Up> :bp<cr>
@@ -129,11 +102,6 @@ endif
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 
-" Quickly Call Plugin
-nnoremap <leader>tn :NERDTreeToggle<cr>
-nnoremap <leader>tt :TagbarToggle<cr>
-nnoremap <leader>fw :FixWhitespace<cr>
-
 " Search Stuff
 nnoremap / /\v
 nnoremap <leader>n :nohl<cr>
@@ -144,13 +112,21 @@ cnoremap w!! w !sudo tee >/dev/null %
 
 
 " Autocmd
-" Line Number
-autocmd FocusLost   * :set norelativenumber
-autocmd FocusGained * :set relativenumber
-autocmd InsertEnter * :set norelativenumber
-autocmd InsertLeave * :set relativenumber
+" Help
+autocmd FileType help set number
 
 " Indent
-autocmd FileType c,cpp,go set tabstop=8 shiftwidth=8 expandtab ai
-autocmd FileType java,shell,markdown set tabstop=4 shiftwidth=4 expandtab ai
-autocmd FileType ruby,javascript,typescript,graphql,json,toml,yaml,proto set tabstop=2 shiftwidth=2 expandtab ai
+autocmd FileType ruby,javascript,typescript,graphql,json,toml,yaml,proto
+			\ set tabstop=2 shiftwidth=2
+autocmd FileType vim,shell,markdown set tabstop=4 shiftwidth=4
+autocmd FileType c,cpp,go set tabstop=8 shiftwidth=8
+
+" Recording
+" Reference: help last-position-jump
+" neovim doesn't do it by default
+" https://github.com/neovim/neovim/issues/4360
+" https://github.com/neovim/neovim/issues/3472
+autocmd BufReadPost *
+			\	if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+			\ |   execute "normal! g`\""
+			\ | endif
