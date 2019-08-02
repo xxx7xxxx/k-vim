@@ -4,9 +4,10 @@ call plug#begin('~/.vim/plugged')
 " NOTICE: <Plug>xxx needs map but noremap.
 
 
+" Standby plugin
 " Plug 'chr4/nginx.vim'
 " Plug 'plasticboy/vim-markdown'
-" Plug 'cespare/vim-toml'
+Plug 'cespare/vim-toml'
 " Plug 'elzr/vim-json'
 
 
@@ -91,6 +92,11 @@ Plug 'fatih/vim-go'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 	let g:deoplete#enable_at_startup = 1
 Plug 'zchee/deoplete-go', { 'do': 'make'}
+	let g:deoplete#sources#go#builtin_objects = 1
+	let g:deoplete#sources#go#unimported_packages = 1
+
+
+Plug 'Shougo/vimshell.vim'
 
 
 Plug 'unblevable/quick-scope'

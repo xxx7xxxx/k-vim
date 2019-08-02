@@ -9,6 +9,7 @@ source ~/.vim/main.vim
 " General
 colorscheme Tomorrow-Night-Bright
 filetype plugin indent on
+set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 syntax on
 
 
@@ -23,12 +24,12 @@ cnoreabbrev VSP vsp
 
 " Options
 set background=light
-set clipboard=unnamedplus
-set completeopt=longest,menu
+" set clipboard=unnamedplus
+set completeopt=menu,longest,noinsert,noselect
 set cursorline
 set formatoptions+=m
-set laststatus=0
 set hidden
+set laststatus=0
 set laststatus=2
 set matchtime=1
 set mouse=a
@@ -66,6 +67,8 @@ nnoremap dB diB " delete inner {} - equal to `onoremap B iB`
 nnoremap dq di"
 nnoremap ds di'
 nnoremap U <C-r>
+" http://vim.wikia.com/wiki/Improve_completion_popup_menu
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
 " Movement
 noremap H ^
@@ -120,6 +123,7 @@ autocmd FileType ruby,javascript,typescript,graphql,json,toml,yaml,proto
 			\ set tabstop=2 shiftwidth=2
 autocmd FileType vim,shell,markdown set tabstop=4 shiftwidth=4
 autocmd FileType c,cpp,go set tabstop=8 shiftwidth=8
+
 
 " Recording
 " Reference: help last-position-jump
