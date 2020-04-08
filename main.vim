@@ -84,6 +84,8 @@ Plug 'fatih/vim-go'
     let g:go_highlight_build_constraints = 1
     let g:go_autodetect_gopath = 1
     let g:go_fmt_command = "goimports"
+	let g:go_def_mode='gopls'
+	let g:go_info_mode='gocode'
     " let g:go_fmt_fail_silently = 1
     autocmd FileType go nmap <leader>d <Plug>(go-def-vertical)
     autocmd FileType go nmap <leader>s <Plug>(go-def-pop)
@@ -105,6 +107,25 @@ Plug 'unblevable/quick-scope'
 
 Plug 'Yggdroot/indentLine'
 set list lcs=tab:\|\ 
+
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+Plug 'junegunn/fzf'
+
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 
 call plug#end()

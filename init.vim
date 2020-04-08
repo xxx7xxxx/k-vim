@@ -134,3 +134,30 @@ autocmd BufReadPost *
 			\	if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
 			\ |   execute "normal! g`\""
 			\ | endif
+
+
+" Insert Sha-Bang
+autocmd BufNewFile *.sh,*.py :call AutoSetFileHead()
+function! AutoSetFileHead()
+    if &filetype == 'sh'
+        call setline(1, "\#!/usr/bin/env bash")
+    endif
+
+    if &filetype == 'python'
+        call setline(1, "\#!/usr/bin/env python3")
+        call append(1, "\# -*- coding: utf-8 -*-")
+    endif
+
+    normal G
+    normal o
+    normal o
+endfunc
+
+" Chmod for Sha-Band Files
+autocmd BufWritePost * :call AddExecMod()
+function AddExecMod()
+    let line = getline(1)
+    if strpart(line, 0, 2) == "#!"
+        call system("chmod +x ". expand("%"))
+    endif
+endfunction
