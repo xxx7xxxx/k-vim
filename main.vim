@@ -109,10 +109,10 @@ Plug 'Yggdroot/indentLine'
 set list lcs=tab:\|\ 
 
 
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
 
 Plug 'junegunn/fzf'
 

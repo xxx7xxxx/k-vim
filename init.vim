@@ -43,7 +43,7 @@ set shiftround
 set showmatch
 set smartcase
 set smartindent
-set softtabstop=8
+set softtabstop=2
 set wildmode=list:longest
 
 
